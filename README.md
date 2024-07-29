@@ -1,36 +1,52 @@
 # LayerArchitectureDesign-
 Developing with Layer Architecture Pattern
+
 Step 1: Create the Solution and Projects
 Create a new solution: Open Visual Studio for Mac and create a new solution.
 Add projects to the solution:
 API Project: This will be the main entry point of the application.
 Business Logic Layer (BLL) Project: This will contain the business logic.
 Data Access Layer (DAL) Project: This will handle the data access.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Step 2: Setup Projects
 2.1 API Project
 Create a new ASP.NET Core Web API project.
 Install necessary packages:
 sh
 Copy code
+
+
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 2.2 BLL Project
 Create a new Class Library project for the Business Logic Layer.
 Reference this project from the API project.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 2.3 DAL Project
 Create a new Class Library project for the Data Access Layer.
 Install necessary packages:
 sh
 Copy code
+
 dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.Design
+
 Reference this project from the BLL project.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Step 3: Implement the Layered Architecture
+
 3.1 Data Access Layer (DAL)
 TodoItem.cs:
 
 csharp
 Copy code
+
 namespace ToDoApp.DAL
 {
     public class TodoItem
@@ -40,10 +56,14 @@ namespace ToDoApp.DAL
         public bool IsComplete { get; set; }
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 AppDbContext.cs:
 
 csharp
 Copy code
+
+
 using Microsoft.EntityFrameworkCore;
 
 namespace ToDoApp.DAL
@@ -55,6 +75,8 @@ namespace ToDoApp.DAL
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 3.2 Business Logic Layer (BLL)
 ITodoService.cs:
 
@@ -74,6 +96,9 @@ namespace ToDoApp.BLL
         void Delete(int id);
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 TodoService.cs:
 
 csharp
@@ -126,11 +151,17 @@ namespace ToDoApp.BLL
         }
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 3.3 API Layer
 Startup.cs:
 
 csharp
 Copy code
+
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -178,10 +209,17 @@ namespace ToDoApp.API
         }
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 TodoController.cs:
 
 csharp
 Copy code
+
+
+
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ToDoApp.BLL;
@@ -244,20 +282,38 @@ namespace ToDoApp.API.Controllers
         }
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 Step 4: Configure Database
 Add the connection string in appsettings.json of the API project:
+
+
 json
 Copy code
+
+
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=ToDoDb;Trusted_Connection=True;MultipleActiveResultSets=true"
   }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 Create and apply migrations:
+
 sh
 Copy code
+
 dotnet ef migrations add InitialCreate --project ../ToDoApp.DAL
 dotnet ef database update --project ../ToDoApp.DAL
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 Step 5: Run the Project
 Set the API project as the startup project.
 Run the application.
