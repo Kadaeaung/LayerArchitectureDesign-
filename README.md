@@ -1,4 +1,4 @@
-# To-Do List API
+# Layer Architecture Design
 
 This project is a simple To-Do List API built with C# and .NET Core 8.0, utilizing a layered architecture. The API allows users to perform CRUD operations on To-Do items.
 
@@ -10,6 +10,7 @@ This project is a simple To-Do List API built with C# and .NET Core 8.0, utilizi
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
+- [Contributors](#contributors)
 - [License](#license)
 
 ## Getting Started
@@ -26,3 +27,6 @@ To get a local copy up and running, follow these simple steps.
 1. Clone the repository:
    ```sh
    git clone https://github.com/your-username/todo-list-api.git
+
+
+###
