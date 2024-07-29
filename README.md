@@ -34,23 +34,23 @@ To get a local copy up and running, follow these simple steps.
 ## Project Structure
 ### The project is structured into three main layers:
 
-1. API Layer: This is the main entry point of the application. It handles HTTP requests and responses.
-2. Business Logic Layer (BLL): This layer contains the business logic.
-3. Data Access Layer (DAL): This layer handles the data access and database interactions.
-4. /ToDoApp
-│
-├── ToDoApp.API
-│   ├── Controllers
-│   ├── Program.cs
-│   └── Startup.cs
-│
-├── ToDoApp.BLL
-│   ├── Interfaces
-│   └── Services
-│
-└── ToDoApp.DAL
-    ├── Models
-    └── AppDbContext.cs
+#### 1. API Layer: This is the main entry point of the application. It handles HTTP requests and responses.
+#### 2. Business Logic Layer (BLL): This layer contains the business logic.
+#### 3. Data Access Layer (DAL): This layer handles the data access and database interactions.
+#### 4. /ToDoApp
+#### │
+#### ├── ToDoApp.API
+#### │   ├── Controllers
+#### │   ├── Program.cs
+#### │   └── Startup.cs
+#### │
+#### ├── ToDoApp.BLL
+#### │   ├── Interfaces
+#### │   └── Services
+#### │
+#### └── ToDoApp.DAL
+####    ├── Models
+####    └── AppDbContext.cs
 
    
    
