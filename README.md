@@ -114,9 +114,9 @@ Contributions are what make the open-source community such an amazing place to l
 ## 5. Contributors
 ### Thanks to the following people who have contributed to this project:
 
-#### Kadae Aung (Software Engineer)
-#### Tin Htoo (Tester)
-#### Hein Zin Myo Aung (Frontend Developer)
+#### - [Kadae Aung (Software Engineer)]
+#### - [Tin Htoo (Tester)]
+#### - [Hein Zin Myo Aung (Frontend Developer)]
 
 ## License
 ### Distributed under the MIT License. See LICENSE for more information.
