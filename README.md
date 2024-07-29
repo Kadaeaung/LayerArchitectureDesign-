@@ -31,8 +31,8 @@ To get a local copy up and running, follow these simple steps.
 
 ###
 
-Project Structure
-The project is structured into three main layers:
+## Project Structure
+### The project is structured into three main layers:
 
 1. API Layer: This is the main entry point of the application. It handles HTTP requests and responses.
 2. Business Logic Layer (BLL): This layer contains the business logic.
@@ -52,9 +52,9 @@ The project is structured into three main layers:
     ├── Models
     └── AppDbContext.cs
 
-   ###
    
-Setup and Configuration
+   
+## Setup and Configuration
 1. Configure Database Connection
 
 Add your database connection string in the appsettings.json file of the API project:
@@ -72,12 +72,12 @@ Create and apply the initial database migrations:
 dotnet ef migrations add InitialCreate --project ../ToDoApp.DAL
 dotnet ef database update --project ../ToDoApp.DAL
 
-Usage
+## Usage
 1. Set the API project as the startup project.
 2. Run the application.
 3. The API will be available at https://localhost:5001.
 
-API Endpoints
+## API Endpoints
 GET /api/todo: Get all To-Do items.
 GET /api/todo/{id}: Get a To-Do item by ID.
 POST /api/todo: Create a new To-Do item.
@@ -85,7 +85,7 @@ PUT /api/todo/{id}: Update an existing To-Do item.
 DELETE /api/todo/{id}: Delete a To-Do item by ID.
 
 
-Example Requests
+## Example Requests
 GET /api/todo
 curl -X GET https://localhost:5001/api/todo
 
@@ -102,7 +102,7 @@ curl -X PUT https://localhost:5001/api/todo/1 \
 DELETE /api/todo/{id}
 curl -X DELETE https://localhost:5001/api/todo/1
 
-Contributing
+## Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 Fork the Project
@@ -111,14 +111,14 @@ Fork the Project
 3. Push to the Branch (git push origin feature/AmazingFeature)
 4. Open a Pull Request
 
-5. Contributors
+## 5. Contributors
 Thanks to the following people who have contributed to this project:
 
 Kadae Aung (Software Engineer)
 Tin Htoo (Tester)
-Contributor Name
+Hein Zin Myo Aung
 
-License
+## License
 Distributed under the MIT License. See LICENSE for more information.
 
 Replace placeholders like `your-username`, `Contributor Name`, and the license link as appropriate for your project.
